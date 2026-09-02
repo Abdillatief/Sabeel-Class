@@ -1,0 +1,6 @@
+{
+  "name": "Sabeel Class",
+  "description": "النظام الداخلي لأكاديمية سبيل لتحفيز الطلاب عبر مسابقات النقاط الشهرية والأوسمة والشهادات للمعلمين.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

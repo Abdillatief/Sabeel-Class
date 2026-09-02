@@ -1,0 +1,110 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Default deny all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    // USERS COLLECTION
+    match /users/{userId} {
+      allow read: if isSignedIn() && request.auth.uid == userId;
+      allow create: if isSignedIn() && request.auth.uid == userId
+                    && request.resource.data.email == request.auth.token.email
+                    && request.resource.data.academy == "Sabeel Academy";
+      allow update: if isSignedIn() && request.auth.uid == userId
+                    && request.resource.data.email == existing().email
+                    && request.resource.data.academy == "Sabeel Academy";
+      allow delete: if false;
+    }
+
+    // STUDENTS COLLECTION
+    match /students/{studentId} {
+      // Teacher can read their own students, or academy query for top ranking
+      allow read: if isSignedIn() && (
+        resource.data.teacherId == request.auth.uid ||
+        request.auth != null
+      );
+      allow create: if isSignedIn() 
+                    && request.resource.data.teacherId == request.auth.uid
+                    && request.resource.data.name is string
+                    && request.resource.data.totalPoints is number;
+      allow update: if isSignedIn()
+                    && resource.data.teacherId == request.auth.uid
+                    && request.resource.data.teacherId == request.auth.uid;
+      allow delete: if isSignedIn() && resource.data.teacherId == request.auth.uid;
+    }
+
+    // SKILLS COLLECTION
+    match /skills/{skillId} {
+      allow read: if isSignedIn() && resource.data.teacherId == request.auth.uid;
+      allow create: if isSignedIn() 
+                    && request.resource.data.teacherId == request.auth.uid
+                    && request.resource.data.name is string
+                    && request.resource.data.points is number;
+      allow update: if isSignedIn()
+                    && resource.data.teacherId == request.auth.uid
+                    && request.resource.data.teacherId == request.auth.uid;
+      allow delete: if isSignedIn() && resource.data.teacherId == request.auth.uid;
+    }
+
+    // POINT HISTORY COLLECTION
+    match /pointHistory/{historyId} {
+      allow read: if isSignedIn() && resource.data.teacherId == request.auth.uid;
+      allow create: if isSignedIn()
+                    && request.resource.data.teacherId == request.auth.uid
+                    && request.resource.data.studentId is string
+                    && request.resource.data.points is number;
+      allow update: if isSignedIn() && resource.data.teacherId == request.auth.uid;
+      allow delete: if isSignedIn() && resource.data.teacherId == request.auth.uid;
+    }
+
+    // BADGES DEFINITIONS COLLECTION
+    match /badges/{badgeId} {
+      allow read: if isSignedIn();
+      allow write: if false; // System badges only
+    }
+
+    // STUDENT BADGES COLLECTION
+    match /studentBadges/{studentBadgeId} {
+      allow read: if isSignedIn() && resource.data.teacherId == request.auth.uid;
+      allow create: if isSignedIn()
+                    && request.resource.data.teacherId == request.auth.uid
+                    && request.resource.data.studentId is string
+                    && request.resource.data.badgeId is string;
+      allow delete: if isSignedIn() && resource.data.teacherId == request.auth.uid;
+      allow update: if false;
+    }
+
+    // COMPETITIONS COLLECTION
+    match /competitions/{competitionId} {
+      allow read: if isSignedIn() && (
+        resource.data.teacherId == request.auth.uid ||
+        resource.data.type == "academy"
+      );
+      allow create: if isSignedIn() 
+                    && request.resource.data.teacherId == request.auth.uid;
+      allow update: if isSignedIn()
+                    && resource.data.teacherId == request.auth.uid;
+      allow delete: if isSignedIn() && resource.data.teacherId == request.auth.uid;
+    }
+
+    // CERTIFICATES COLLECTION
+    match /certificates/{certificateId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn()
+                    && request.resource.data.studentId is string
+                    && request.resource.data.points is number;
+      allow update, delete: if false;
+    }
+  }
+}
