@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@layer base {
+  /* Theme Variants */
+  body.theme-classic-mushaf {
+    background-color: #FDFBF7;
+    color: #1C1917;
+  }
+
+  body.theme-night-emerald {
+    background-color: #071513;
+    color: #E2E8F0;
+  }
+
+  body.theme-light {
+    background-color: #F8FAFC;
+    color: #0F172A;
+  }
+}
+
+/* Custom Scrollbar for clean reading experience */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+
+.theme-night-emerald ::-webkit-scrollbar-thumb {
+  background: #1E3A34;
+}
+
+/* Font helpers */
+.font-quran {
+  font-family: 'Amiri Quran', 'Scheherazade New', 'Amiri', serif;
+}
