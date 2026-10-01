@@ -1,0 +1,13 @@
+name = "sabeel-quran"
+main = "worker.ts"
+compatibility_date = "2024-09-23"
+
+# Cloudflare Workers Static Assets Configuration
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+not_found_handling = "single-page-application"
+html_handling = "auto-trailing-slash"
+
+# Cloudflare Pages Build Directory (for Pages deployments)
+pages_build_output_dir = "dist"

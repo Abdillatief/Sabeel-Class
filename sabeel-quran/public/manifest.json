@@ -1,0 +1,18 @@
+{
+  "name": "سبيل القرآن - Sabeel Quran",
+  "short_name": "سبيل القرآن",
+  "description": "المصحف الإلكتروني التعليمي الشامل سبيل القرآن - تلاوة بالرسم العثماني، أحكام التجويد الملونة، ونظام التسميع الذكي",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#38bdf8",
+  "dir": "rtl",
+  "lang": "ar",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
