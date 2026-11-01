@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Cairo', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-serif: 'Amiri', serif;
+    --font-display: 'Tajawal', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #000000;
+    color: #f3f4f6;
+  }
+}
+
+/* Custom underline styles for corrected errors */
+.corrected-word {
+  text-decoration: underline wavy #ef4444;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+  background-color: rgba(239, 68, 68, 0.12);
+  padding: 0 4px;
+  border-radius: 4px;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.corrected-word:hover {
+  background-color: rgba(239, 68, 68, 0.25);
+  transform: translateY(-1px);
+}
+
+/* Print layout optimizations */
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #111827 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .corrected-word {
+    text-decoration: underline solid #b91c1c !important;
+    background-color: transparent !important;
+  }
+}

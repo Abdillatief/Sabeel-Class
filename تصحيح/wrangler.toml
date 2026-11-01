@@ -1,0 +1,7 @@
+# Cloudflare Pages / Workers configuration for Sabeel Arabic Essay OCR & Evaluator
+name = "sabeel-arabic-essay-evaluator"
+compatibility_date = "2024-09-23"
+pages_build_output_dir = "dist"
+
+# Environment Variables configured in Cloudflare Dashboard:
+# GEMINI_API_KEY = "your-api-key-here"

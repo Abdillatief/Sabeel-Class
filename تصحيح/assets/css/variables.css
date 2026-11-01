@@ -1,0 +1,239 @@
+:root {
+  /* Color Palette - Premium Sabeel Baby Blue & Sapphire Navy SaaS Theme */
+  --primary-color: #0284c7; /* Vibrant Sky Cerulean */
+  --primary-hover: #0369a1; /* Rich Ocean Blue */
+  --primary-active: #075985; /* Deep Navy Azure */
+  --primary-light: #e0f2fe; /* Airy Sky Highlight */
+  --primary-subtle: rgba(2, 132, 199, 0.1);
+  --primary-border: rgba(2, 132, 199, 0.28);
+  
+  --secondary-color: #33537a; /* Refined Slate Navy */
+  --secondary-hover: #1e3a5f;
+  --secondary-light: #e6f1fb;
+  
+  --accent-color: #0284c7; /* Harmonious Sky Blue Accent */
+  --accent-light: #e0f2fe;
+  
+  /* Semantic Status Colors */
+  --success: #059669; /* Emerald 600 */
+  --success-hover: #047857;
+  --success-light: #e6fcf5;
+  --success-border: rgba(5, 150, 105, 0.28);
+  
+  --warning: #d97706; /* Amber 600 */
+  --warning-hover: #b45309;
+  --warning-light: #fef8ee;
+  --warning-border: rgba(217, 119, 6, 0.28);
+  
+  --danger: #dc2626; /* Red 600 */
+  --danger-hover: #b91c1c;
+  --danger-light: #fef2f2;
+  --danger-border: rgba(220, 38, 38, 0.28);
+
+  --info: #0284c7; /* Sky Blue 600 */
+  --info-light: #e0f2fe;
+  --info-border: rgba(2, 132, 199, 0.28);
+  
+  /* Background Canvas & Card Surfaces - Distinct Soft Baby Blue (Non-White) */
+  --bg-primary: #e6f1fb; /* Serene Light Baby Blue Canvas */
+  --bg-secondary: #f0f7fe; /* Luminous Pastel Baby Blue Surface */
+  --bg-card: #f0f7fe; /* Cohesive Baby Blue Card Surface */
+  --card-bg: #f0f7fe; /* Fallback support for inline references */
+  --bg-surface: #ffffff; /* Solid Pure Elevated Surface for Modals & Dropdowns */
+  --bg-hover: #dbeafe; /* Soft Sky Blue Hover State */
+  --bg-active: #cbe2fb; /* Defined Baby Blue Active State */
+  
+  /* Text Typography Colors - Deep Midnight Sapphire Navy (Passes WCAG AAA) */
+  --text-primary: #0a2540; /* Deep Midnight Navy - Ultra High Contrast & Legibility */
+  --text-secondary: #24466b; /* Slate Navy */
+  --text-muted: #52759e; /* Calm Steel Blue */
+  --text-subtle: #7e9ec4; /* Soft Pale Navy */
+  
+  /* Structural Borders & Radii - Tinted Baby Blue Borders */
+  --border-color: #c7def4; /* Delicate Sky/Baby Blue Border */
+  --border-color-strong: #a4c9ee; /* Distinct Baby Blue Border */
+  --border-radius: 10px;
+  --border-radius-sm: 6px;
+  --border-radius-lg: 14px;
+  --border-radius-pill: 9999px;
+  
+  /* Modern Elevation Shadows (Tinted with Soft Navy) */
+  --shadow-xs: 0 1px 2px 0 rgba(10, 37, 64, 0.04);
+  --shadow-sm: 0 1px 3px 0 rgba(10, 37, 64, 0.06), 0 1px 2px -1px rgba(10, 37, 64, 0.04);
+  --shadow-md: 0 4px 6px -1px rgba(10, 37, 64, 0.07), 0 2px 4px -2px rgba(10, 37, 64, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(10, 37, 64, 0.09), 0 4px 6px -4px rgba(10, 37, 64, 0.04);
+  --shadow-xl: 0 20px 25px -5px rgba(10, 37, 64, 0.12), 0 8px 10px -6px rgba(10, 37, 64, 0.04);
+  
+  /* Transitions */
+  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Button Animations & Interactive States */
+.btn {
+  position: relative;
+  transition: all var(--transition-fast) !important;
+  transform: translateY(0);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.985) !important;
+}
+
+/* Sidebar Menu Item Animations */
+.sidebar-menu-item {
+  transition: all var(--transition-fast) !important;
+}
+
+/* Interactive Cards */
+.card, .metric-card {
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast) !important;
+}
+
+/* Dark SaaS Theme - Pure Matte Deep Black (أسود كاتم) */
+.dark-theme, body.dark-theme, html.dark-theme {
+  --primary-color: #14b8a6; /* Brighter teal for high contrast */
+  --primary-hover: #0d9488;
+  --primary-active: #0f766e;
+  --primary-light: rgba(20, 184, 166, 0.14);
+  --primary-subtle: rgba(20, 184, 166, 0.08);
+  --primary-border: rgba(20, 184, 166, 0.3);
+
+  --bg-primary: #000000; /* Pure Matte Deep Black Canvas (أسود كاتم) */
+  --bg-secondary: #0c0c0e; /* Elevated Matte Pitch Black Surface */
+  --bg-card: #0c0c0e;
+  --bg-surface: #0f0f12; /* Solid Matte Dark Surface */
+  --bg-hover: #17171b;
+  --bg-active: #222228;
+
+  --text-primary: #f4f4f5; /* Crisp White Zinc 100 */
+  --text-secondary: #a1a1aa; /* Zinc 400 */
+  --text-muted: #71717a; /* Zinc 500 */
+  --text-subtle: #52525b; /* Zinc 600 */
+
+  --border-color: #202025; /* Sleek Matte Dark Zinc Border */
+  --border-color-strong: #2e2e35;
+
+  --secondary-light: #16161a;
+  
+  --success: #10b981;
+  --success-light: rgba(16, 185, 129, 0.14);
+  --success-border: rgba(16, 185, 129, 0.35);
+  
+  --warning: #f59e0b;
+  --warning-light: rgba(245, 158, 11, 0.14);
+  --warning-border: rgba(245, 158, 11, 0.35);
+
+  --danger: #ef4444;
+  --danger-light: rgba(239, 68, 68, 0.14);
+  --danger-border: rgba(239, 68, 68, 0.35);
+
+  --info: #3b82f6;
+  --info-light: rgba(59, 130, 246, 0.14);
+  --info-border: rgba(59, 130, 246, 0.35);
+
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.65);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.8);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.88);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.92);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.96);
+}
+
+/* Logo styling - completely frameless and clean */
+.logo img,
+.academy-logo-img,
+#loginLogoContainer img,
+.sidebar .logo img {
+  background: transparent !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+  display: inline-block;
+  object-fit: contain;
+}
+
+.dark-theme .logo img,
+.dark-theme .academy-logo-img,
+.dark-theme #loginLogoContainer img,
+.dark-theme .sidebar .logo img {
+  background: transparent !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+  display: inline-block;
+  object-fit: contain;
+}
+
+/* Component Overrides for Matte Black (أسود كاتم) */
+.dark-theme .card, .dark-theme .modal-card, .dark-theme .metric-card {
+  background-color: #0c0c0e !important;
+  border-color: #202025 !important;
+}
+
+.dark-theme .form-control {
+  background-color: #060607 !important;
+  border-color: #202025 !important;
+  color: #f4f4f5 !important;
+}
+
+.dark-theme .form-control:focus {
+  background-color: #060607 !important;
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.2) !important;
+}
+
+.dark-theme select.form-control option {
+  background-color: #0c0c0e !important;
+  color: #f4f4f5 !important;
+}
+
+.dark-theme table {
+  color: #f4f4f5 !important;
+}
+
+.dark-theme table th {
+  background-color: #070709 !important;
+  color: #a1a1aa !important;
+  border-bottom: 1px solid #202025 !important;
+}
+
+.dark-theme table td {
+  border-bottom: 1px solid #1a1a1f !important;
+}
+
+.dark-theme tr:hover td {
+  background-color: #141418 !important;
+}
+
+.dark-theme .sidebar {
+  background-color: #070709 !important;
+  border-left: 1px solid #1e1e24 !important;
+}
+
+.dark-theme .navbar {
+  background-color: #070709 !important;
+  border-bottom: 1px solid #1e1e24 !important;
+}
+
+.dark-theme .sidebar-header, .dark-theme .sidebar-footer {
+  border-color: #1e1e24 !important;
+}
+
+.dark-theme h1, .dark-theme h2, .dark-theme h3, .dark-theme h4, .dark-theme strong {
+  color: #f4f4f5 !important;
+}
+
+[dir="rtl"] {
+  font-family: 'IBM Plex Sans Arabic', 'Alexandria', 'Cairo', system-ui, -apple-system, sans-serif;
+}
