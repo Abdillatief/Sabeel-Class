@@ -1,6 +1,0 @@
-{
-  "name": "Sabeel Quran",
-  "description": "المصحف الإلكتروني التعليمي الشامل سبيل القرآن - تلاوة بالرسم العثماني، أحكام التجويد الملونة التفاعلية، خطط الحفظ، والبحث المتقدم",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
